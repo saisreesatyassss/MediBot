@@ -4,7 +4,7 @@ import { applications } from '../../pages/data';
 import pic from '../../assets/client1.svg'
 import Axios from 'axios';
 
-const Application_card = ({arr,recruiter}) => {
+const Application_card = ({arr,doctor}) => {
     const [status, setStatus] = useState('');
 
     const handleShortlist = () => {
@@ -26,7 +26,7 @@ const Application_card = ({arr,recruiter}) => {
     const handleReject = () => {
         setStatus('rejected');
         console.log(arr.jobId);
-        Axios.delete(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/applicationsReceived/${recruiter._id}`,{ data: { jobId: arr.jobId } }).then((res)=>{
+        Axios.delete(`https://jobifybackend-pjf3.onrender.com/doctorRoute/applicationsReceived/${doctor._id}`,{ data: { jobId: arr.jobId } }).then((res)=>{
             if(res.status===200){
                 alert("Application Rejected")
             }

@@ -7,7 +7,7 @@ import Axios from 'axios';
 
 const Profile = () => {
   const { state } = useLocation();
-  const [recruitee,setRecruitee]=useState(null);
+  const [client,setClient]=useState(null);
     const navigate=useNavigate();
     const [skillsError, setSkillsError] = useState(false);
     const [newSkill, setNewSkill] = useState('');
@@ -33,10 +33,10 @@ const Profile = () => {
         resume:''
     });
 
-    useEffect(() => {
-      Axios.get(`https://jobifybackend-pjf3.onrender.com/recruiteeRoute/recruiteePage/profile/${state}`)
+    useEffect(() => { 
+      Axios.get(`http://localhost:4000/clientRoute/clientPage/profile/${state}`)
       .then((res) => {
-        setRecruitee((prevRecruitee) => {
+        setClient((prevClient) => {
           setArr({
             fname:res.data.username,
             lname:res.data.username,
@@ -70,7 +70,7 @@ const Profile = () => {
 
     const saveChanges = () => {
         setIsEditing(false);
-        Axios.put(`http://localhost:4000/recruiteeRoute/profile/${recruitee._id}`,arr).
+        Axios.put(`http://localhost:4000/clientRoute/profile/${client._id}`,arr).
         then((res)=>{
             if (res.status === 200 && res.data.message === 'Update Successful') {
               setArr(
@@ -144,7 +144,7 @@ const Profile = () => {
         setArr((prevData) => ({ ...prevData, [id]: value }));
     };
   return (
-    (recruitee)?
+    (client)?
     <div className="mt-5 pt-3">
       <div className="position-relative">
         <div className="bg-primary container-fluid">
@@ -238,6 +238,7 @@ const Profile = () => {
             <hr/>
             <div className="d-flex justify-content-center align-items-center pb-3">
                 <a className="btn btn-primary body" href={`${arr.linkedIn}`}>View LinkedIn Profile</a>
+                
             </div>
           </div>
           {/* Personal details */}

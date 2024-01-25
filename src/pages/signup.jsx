@@ -43,11 +43,11 @@ export default function Signup(){
       alert('Form contains errors. Please fill in all fields.');
     } else { 
       const data={username:username,password:password,email:email,phone:phone,company:company};
-      Axios.post("https://jobifybackend-pjf3.onrender.com/recruiterRoute/signup",data)
+      Axios.post("http://localhost:4000/doctorRoute/signup",data)
       .then((res)=>{ 
         if (res.status === 200 && res.data.message === 'SignUp successful') {
           alert("SignUp successful");
-          navigate(`/recruiterPage/${res.data.recruiter._id}`,{state:res.data.recruiter._id});
+          navigate(`/doctorPage/${res.data.doctor._id}`,{state:res.data.doctor._id});
         }else {
           alert("SignUp failed");
         }
@@ -63,7 +63,7 @@ export default function Signup(){
        
         <div className="col-1 col-md-6 container text-start">
           <div id='form' className='flex flex-col'>
-            <h2>Recruiter Sign Up</h2>
+            <h2>Doctor Sign Up</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3 position-relative">
                 <label >Username</label>
@@ -130,7 +130,7 @@ export default function Signup(){
                 />
                
               </div>
-              <p>Do you want to signUp as Recruitee?<span style={mystyle}><Link to='/recruiteeSignup' className='nav-link'>Click Here</Link></span> </p>  
+              <p>Do you want to signUp as Client?<span style={mystyle}><Link to='/clientSignup' className='nav-link'>Click Here</Link></span> </p>  
               <div className="signup-button-container text-center py-2">
                 <button className="btn btn-primary btns" type="submit">
                   Sign Up

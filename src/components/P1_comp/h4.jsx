@@ -3,8 +3,8 @@ import img1 from '../../Icon/bulb.svg';
 import img2 from '../../Icon/target.svg';
 import C2 from './card2';
 const H4 = () => {
-    const card1 = {img:img1,head:"Our Vision",subHead:"Our vision at Jobify is to revolutionize the job search experience, empowering individuals to find and excel in their dream careers. We're committed to providing innovative tools and unwavering support on every step of the journey."};
-    const card2 = {img:img2,head:"Our Mission",subHead:"Our mission at Jobify is to simplify and enhance the job search process, connecting talent with opportunities that align with their goals. We strive to provide a platform that fosters growth, learning, and career advancement for all our users."};
+    const card1 = {img:img1,head:"Our Vision",subHead:"MediBot envisions a world where healthcare is accessible, convenient, and personalized for everyone, regardless of their location or circumstances. We aim to bridge the gap between patients and healthcare providers, empowering individuals to take control of their health and well-being."};
+    const card2 = {img:img2,head:"Our Mission",subHead:"Our mission is to revolutionize healthcare delivery by providing a comprehensive telemedicine platform that seamlessly integrates virtual consultations, AI-powered chatbot assistance, and personalized health management tools."};
   return (
     <div className='py-5' style={{backgroundColor:"#ECF5FE"}}>
         <div className='d-flex flex-row justify-content-center gap-5'>

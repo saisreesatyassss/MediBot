@@ -3,9 +3,9 @@ import profile_bg from "../assets/Profile_bg.svg";
 import dp from "../assets/dp.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import Axios  from "axios";
-const Hrprofile = () => {
+const Doctorprofile = () => {
   const { state } = useLocation();
-  const [recruiter,setRecruiter]=useState(null);
+  const [doctor,setDoctor]=useState(null);
   const [arr, setArr] = useState({
     username:"",
     email:"",
@@ -15,13 +15,13 @@ const Hrprofile = () => {
     state:"",
     city:"",
     accepted:34,
-    shortlisted:35,
+    shortlisted:35, 
     rejected:2,
-});
+});http:
   useEffect(() => {
-    Axios.get(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/recruiterPage/hrProfile/${state}`)
+    Axios.get(`http://localhost:4000/doctorRoute/doctorPage/doctorProfile/${state}`)
     .then((res) => {
-      setRecruiter((prevRecruiter) => {
+      setDoctor((prevDoctor) => {
         setArr({
           username: res.data.username,
           email: res.data.email,
@@ -47,7 +47,7 @@ const Hrprofile = () => {
 
     const saveChanges = () => {
         setIsEditing(false);
-        Axios.put(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/hrprofile/${recruiter._id}`,arr).
+        Axios.put(`https://jobifybackend-pjf3.onrender.com/doctorRoute/doctorprofile/${doctor._id}`,arr).
         then((res)=>{
             if (res.status === 200 && res.data.message === 'Update Successful') {
               setArr(res.data);
@@ -79,7 +79,7 @@ const Hrprofile = () => {
       navigate("/");
     }
   return (
-    (recruiter)?
+    (doctor)?
     <div className="mt-5 pt-3">
       <div className="position-relative">
         <div className="bg-primary container-fluid">
@@ -280,4 +280,4 @@ const Hrprofile = () => {
   );
 };
 
-export default Hrprofile;
+export default Doctorprofile;

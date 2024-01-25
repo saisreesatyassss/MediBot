@@ -4,16 +4,17 @@ import Home from './pages/home';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Login from './pages/login';
 import Signup from './pages/signup';
-import SignupRecruitee from './pages/signupRecruitee';
-import { RecruiterPage } from './pages/recruiterPage';
-import { RecruiteePage } from './pages/recruiteePage';
+import SignupClient from './pages/signupClient';
+import { DoctorPage } from './pages/doctorPage';
+import { ClientPage } from './pages/clientPage';
 import Profile from './pages/profile';
-import Hrprofile from './pages/hrProfile';
+import Doctorprofile from './pages/doctorProfile';
 import HrJobs from './pages/JobsHR';
 import Jobs from './pages/jobs';
 
 function App() {
   return (
+    console.log("Hello"),
     <div className="App">
       <BrowserRouter>
         <Routes>
@@ -21,14 +22,14 @@ function App() {
           <Route path='/about' element={<About/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/signup' element={<Signup/>}></Route>
-          <Route path='/recruiteeSignup' element={<SignupRecruitee/>}></Route>
-          <Route path='/recruiterPage/:id' element={<RecruiterPage/>}></Route>
-          <Route path='/recruiteePage/:id' element={<RecruiteePage/>}></Route>
-          <Route path='/recruiteePage/profile/:id' element={<Profile/>}></Route>
-          <Route path='/recruiterPage/hrProfile/:id' element={<Hrprofile/>}></Route>
-          <Route path='/recruiterPage/jobs/:id' element={<HrJobs/>}></Route>
-          <Route path='/recruiteePage/jobs/:id' element={<Jobs/>}></Route>
-          <Route path='/recruiteePage/about/:id' element={<About/>}></Route>
+          <Route path='/clientSignup' element={<SignupClient/>}></Route>
+          <Route path='/doctorPage/:id' element={<DoctorPage/>}></Route>
+          <Route path='/clientPage/:id' element={<ClientPage/>}></Route>
+          <Route path='/clientPage/profile/:id' element={<Profile/>}></Route>
+          <Route path='/doctorPage/doctorProfile/:id' element={<Doctorprofile/>}></Route>
+          <Route path='/doctorPage/jobs/:id' element={<HrJobs/>}></Route>
+          <Route path='/clientPage/jobs/:id' element={<Jobs/>}></Route>
+          <Route path='/clientPage/about/:id' element={<About/>}></Route>
         </Routes>
       </BrowserRouter> 
     </div>

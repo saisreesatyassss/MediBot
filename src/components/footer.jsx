@@ -21,7 +21,7 @@ const Footer = () => {
             {/* Main */}
             <div className='d-flex felx-wrap justify-content-between text-start mx-5'>
                 <div className='d-flex flex-column'>
-                    <h1 className='sub-head fw-bold m-0'>Jobify</h1>
+                    <h1 className='sub-head fw-bold m-0'>Medibot</h1>
                     <a href='https://github.com/ramtanniru/Jobify' className='body text-dark-emphasis text-decoration-none'>Github</a>
                     <a href=''></a>
                 </div>
@@ -54,7 +54,7 @@ const Footer = () => {
                     <p className='body m-0'>Copyrights</p>
                 </div>
                 <div>
-                    <p className='body m-0'>Jobify</p>
+                    <p className='body m-0'>MediBot</p>
                 </div>
             </div>
         </div>

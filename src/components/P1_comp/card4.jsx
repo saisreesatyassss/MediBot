@@ -3,7 +3,7 @@ import {React,useState} from 'react'
 import { applications } from '../../pages/data';
 import  Axios  from 'axios';
 
-const C4 = ({arr,colour,info,disable,company,recruitee}) => {
+const C4 = ({arr,colour,info,disable,company,client}) => {
 
     const myStyle = {
         backgroundColor : colour+"30",
@@ -15,9 +15,9 @@ const applyJob = async ()=>{
     setDis(true);
     setApply('Applied');
     try {
-        Axios.put(`https://jobifybackend-pjf3.onrender.com/recruiteeRoute/applyJob/${recruitee}`, {
+        Axios.put(`https://jobifybackend-pjf3.onrender.com/clientRoute/applyJob/${client}`, {
           jobId: arr._id,
-          userId: recruitee,
+          userId: client,
         }).then((res)=>{
             if(res.status===200){
                 alert("Applied successfully");
@@ -31,7 +31,7 @@ const applyJob = async ()=>{
         console.log('Application failed');
       }
       console.log(arr.hrId);
-      Axios.put(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/applicationsReceived/${arr.hrId}`,{jobId:arr._id,userId:recruitee,hrId:arr.hrId}).
+      Axios.put(`https://jobifybackend-pjf3.onrender.com/doctorRoute/applicationsReceived/${arr.hrId}`,{jobId:arr._id,userId:client,hrId:arr.hrId}).
       then((res)=>{
         if(res.status===200){
 

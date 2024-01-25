@@ -20,31 +20,31 @@ export default function Form() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const loginRecruitee=()=>{
+  const loginClient=()=>{
         const data={username:username,password:password};
-        Axios.post("https://jobifybackend-pjf3.onrender.com/recruiteeRoute/login",data)
+        Axios.post("http://localhost:4000/clientRoute/login",data)
         .then((res)=>{
           if (res.status === 200 && res.data.message === 'Login successful') {
             alert("Login successful");
-            navigate(`/recruiteePage/${res.data.recruitee._id}`,{ state: res.data.recruitee._id });
+            navigate(`/clientPage/${res.data.client._id}`,{ state: res.data.client._id });
           } else {
             alert("login failed");
           }
         }).catch((err)=>alert("Invalid credentials"))
       }
-  const loginRecruiter=()=>{
+  const loginDoctor=()=>{
         const data={username:username,password:password};
-        Axios.post("https://jobifybackend-pjf3.onrender.com/recruiterRoute/login",data) 
+        Axios.post("http://localhost:4000/doctorRoute/login",data) 
         .then((res)=>{
           console.log(res.status);
           console.log(res.data.message);
           if (res.status === 200 && res.data.message === 'Login successful') {
             alert("Login successful");
-            navigate(`/recruiterPage/${res.data.recruiter._id}`,{state:res.data.recruiter._id});
+            navigate(`/doctorPage/${res.data.doctor._id}`,{state:res.data.doctor._id});
           } else {
             alert("Invalid Credentials");
           }
-        }).catch((err)=>alert("Invalid credentials"))
+        }).catch((err)=>alert("Invalid credentials",err))
       }
 
   return (
@@ -91,8 +91,8 @@ export default function Form() {
             <span style={mystyle}>Forgot Password?</span>
             <span style={mystyle}>Login as</span>
             <div className="d-flex flex-row justify-content-between">
-              <button className="btn btn-primary btn col-5" onClick={(e) => { e.preventDefault(); loginRecruiter(); }}>Recruiter</button>
-              <button className="btn btn-primary btn col-5" onClick={(e) => { e.preventDefault(); loginRecruitee(); }}>Recruitee</button>
+              <button className="btn btn-primary btn col-5" onClick={(e) => { e.preventDefault(); loginDoctor(); }}>Doctor</button>
+              <button className="btn btn-primary btn col-5" onClick={(e) => { e.preventDefault(); loginClient(); }}>Client</button>
             </div>
             <p>
               Don't have an account?<span style={mystyle}>SignUp</span>

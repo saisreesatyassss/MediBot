@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const steps = ['', '', ''];
 
-export default function SignupRecruitee() {
+export default function SignupClient() {
   const navigate = useNavigate();
     const mystyle={
         color:"#2ba4e4",
@@ -158,11 +158,11 @@ const removeSkill = (skillToRemove) => {
       alert('Please fill in all fields correctly before proceeding.');
     } else {
       const data={username:username,password:password,email:email,phone:phone,qualification:qualification,institutionName:institutionName,fieldName:fieldName,graduationYear:graduationYear,workStatus:workStatus,skills:skills,resume:resume,linkedinProfile:linkedinProfile};
-      Axios.post("https://jobifybackend-pjf3.onrender.com/recruiteeRoute/signup",data)
+      Axios.post("http://localhost:4000/clientRoute/signup",data)
       .then((res)=>{
         if (res.status === 200 && res.data.message === 'SignUp successful') {
           alert("SignUp successful");
-          navigate(`/recruiteePage/${res.data.recruitee._id}`,{ state: res.data.recruitee._id });
+          navigate(`/clientPage/${res.data.client._id}`,{ state: res.data.client._id });
         }else {
           alert("SignUp failed");
         }
@@ -394,7 +394,7 @@ const removeSkill = (skillToRemove) => {
       <div className='col-md-6'><Carousel /></div>
       <div className="col-1 col-md-6 container">
         <div id='form' className='flex2 flex-col text-start'>
-          <h2>Recruitee Sign Up</h2>
+          <h2>Client Sign Up</h2>
           <div className="mb-3">
             {getStepContent(activeStep)}
           </div>
@@ -424,7 +424,7 @@ const removeSkill = (skillToRemove) => {
           </div>
           <div className='text-center'>
   <p style={{ marginBottom: '3px' }}>Already have an account? <span style={mystyle}>Login</span></p>
-  <p style={{ marginTop: '3px' }}>Do you want to sign up as a Recruiter? <span style={mystyle}>Click Here</span></p>
+  <p style={{ marginTop: '3px' }}>Do you want to sign up as a Doctor? <span style={mystyle}>Click Here</span></p>
 </div>
 
         </div>

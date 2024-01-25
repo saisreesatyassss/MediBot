@@ -35,17 +35,17 @@ const Jobs = () => {
 
     const [jobs,setJobs]=useState([]);
     const [company,setCompany]=useState([]);
-    const [allRecruiters,setAllRecruiters]=useState([]);
+    const [allDoctors,setAllDoctors]=useState([]);
 
     useEffect(() => {
-        Axios.get('https://jobifybackend-pjf3.onrender.com/recruiterRoute/allRecruiterIds')
+        Axios.get('http://localhost:4000/doctorRoute/allDoctorIds')
           .then((res) => {
-            const recruiterIds = res.data;
-            setAllRecruiters(recruiterIds);
-            console.log(recruiterIds);
-            const requests = recruiterIds.map((recruiter) => {
-                const idString = recruiter._id.toString();
-              return Axios.get(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/recruiterPage/${idString}`)
+            const doctorIds = res.data;
+            setAllDoctors(doctorIds);
+            console.log(doctorIds);
+            const requests = doctorIds.map((doctor) => {
+                const idString = doctor._id.toString();
+              return Axios.get(`http://localhost:4000/doctorRoute/doctorPage/${idString}`)
                 .then((res) => {
                     setCompany((prev)=>[...prev,res.data.company]);
                   return res.data.applicationsPosted;
@@ -99,7 +99,7 @@ const Jobs = () => {
                 </div>
                 <div className='d-flex flex-wrap justify-content-between gap-5'>
                     {jobs.map((card, index) => (
-                        <C4 key={index} recruitee={state} arr={card} company={company[index]} colour={colors[index % colors.length]} info={info} disable={false}/>
+                        <C4 key={index} client={state} arr={card} company={company[index]} colour={colors[index % colors.length]} info={info} disable={false}/>
                     ))}
                 </div>
             </div>

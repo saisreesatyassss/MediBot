@@ -29,24 +29,24 @@ const H7 = () => {
             name:"Robert Anderson",
             role:"CEO of Company",
             rating:5,
-            head:"Awesome Job Search!",
-            comment:"I am extremely satisfied with the product. The quality exceeded my expectations, and the customer service was outstanding. I highly recommend it to anyone seeking specific benefits or solutions."
+            head:"Awesome Prescriptions!",
+            comment:"MediBot has been a lifesaver for me. I live in a remote area and it's difficult to get to a doctor's office. With MediBot, I can consult with a doctor from the comfort of my own home."
         },
         {
             img:img2,
             name:"Annisa Dinney",
             role:"CEO of Company",
             rating:5,
-            head:"Awesome Job Search!",
-            comment:"Highly impressed with the product, its exceptional quality, and outstanding customer service. I wholeheartedly recommend it for anyone seeking specific benefits or solutions."
+            head:"Awesome Prescriptions!",
+            comment:"I love the chatbot feature. It's so convenient to be able to ask quick health questions and get immediate responses. It's like having a doctor in my pocket!"
         },
         {
             img:img3,
             name:"John Marchell",
             role:"CEO of Company",
             rating:5,
-            head:"Awesome Job Search!",
-            comment:"Thrilled with the product! Exceptional quality, incredible customer service. Highly recommend for anyone seeking specific benefits or solutions."
+            head:"Awesome Prescriptions!",
+            comment:"MediBot has helped me manage my chronic condition so much better. I can track my symptoms, medications, and progress all in one place. It's made a huge difference in my life."
         }
     ]
   return (

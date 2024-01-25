@@ -10,7 +10,7 @@ const Header_2 = ({profile}) => {
     const navigate=useNavigation();
 
     const handleClick=()=>{
-        navigate(`/recruiterPage/hrProfile/${profile}`,{profile});
+        navigate(`/doctorPage/doctorProfile/${profile}`,{profile});
       }
 
   return (
@@ -18,7 +18,7 @@ const Header_2 = ({profile}) => {
       <nav className="navbar navbar-expand-sm navbar-light bg-light px-sm-3 shadow fixed-top">
         <div className="container-fluid col-12">
           <a  className="navbar-brand d-flex flex-row gap-2 col-1" href="/">
-            <img src={logo} height={40}/><span className="head-sub-head fw-bold grad ">Jobify!</span>
+            <img src={logo} height={40}/><span className="head-sub-head fw-bold grad ">MediBot!</span>
           </a>
           <button
             class="navbar-toggler"

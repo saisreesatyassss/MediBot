@@ -134,3 +134,10 @@ body{
   font-family: "Montserrat";
   font-size: 18;
 } 
+
+
+.grad{
+  background: linear-gradient(to right, #0948C0, #27C8C0);
+  -webkit-background-clip: text;
+  color: transparent; 
+}

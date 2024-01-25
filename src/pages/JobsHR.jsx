@@ -10,19 +10,19 @@ import { useNavigate,useLocation } from 'react-router-dom'
 const HrJobs = () => {
 
   const { state } = useLocation();
-  const [recruiter, setRecruiter] = useState(null);
+  const [doctor, setDoctor] = useState(null);
   const [applications,setApplications]=useState([]);
 
 
   useEffect(()=>{
-    Axios.get(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/recruiterPage/applicationsReceived/${state}`)
+    Axios.get(`http://localhost:4000/doctorRoute/doctorPage/applicationsReceived/${state}`)
     .then((res) => setApplications(res.data))
     .catch((err) => alert(err));
   },[])
 
   useEffect(() => {
-    Axios.get(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/recruiterPage/${state}`)
-      .then((res) => setRecruiter(res.data))
+    Axios.get(`http://localhost:4000/doctorRoute/doctorPage/${state}`)
+      .then((res) => setDoctor(res.data))
       .catch((err) => alert(err));
   }, []); 
   const navigate=useNavigate();
@@ -53,7 +53,7 @@ const postJob = () => {
     jobs.push(formData);    
     setJob((prevJob) => [...prevJob, formData]);
     console.log(formData);
-    Axios.put(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/jobs/${recruiter._id}`,formData).
+    Axios.put(`http://localhost:4000/doctorRoute/jobs/${doctor._id}`,formData).
         then((res)=>{
             if (res.status === 200 && res.data.message === 'Update Successful') {
               alert("Update successful");
@@ -134,7 +134,7 @@ const postJob = () => {
         <div className='my-5'>
           <div className='d-flex flex-wrap col-10 mx-auto gap-5 justify-content-between'>
             {filteredApplications.map((application, index) => (
-              <Application_card key={index} recruiter={recruiter} arr={application} />
+              <Application_card key={index} doctor={doctor} arr={application} />
             ))}
           </div>
         </div>
