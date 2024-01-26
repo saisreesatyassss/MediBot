@@ -134,3 +134,21 @@ body{
   font-family: "Montserrat";
   font-size: 18;
 } 
+
+
+.grad2{
+  background: rgb(122,122,227);
+  background: linear-gradient(328deg, rgba(122,122,227,1) 0%, rgba(0,196,255,1) 36%, rgba(104,230,255,1)100%);
+}
+
+
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .glass {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+}

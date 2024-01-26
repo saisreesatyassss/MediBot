@@ -13,7 +13,7 @@ const H3 = () => {
             </p>
         </div>
         <div>
-            <img src={img}/>
+            {/* <img src={img}/> */}
         </div>
     </div>
   )
