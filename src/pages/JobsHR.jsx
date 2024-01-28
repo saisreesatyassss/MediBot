@@ -15,13 +15,13 @@ const HrJobs = () => {
 
 
   useEffect(()=>{
-    Axios.get(`http://localhost:4000/doctorRoute/doctorPage/applicationsReceived/${state}`)
+    Axios.get(`https://medibotbackend.onrender.com/doctorRoute/doctorPage/applicationsReceived/${state}`)
     .then((res) => setApplications(res.data))
     .catch((err) => alert(err));
   },[])
 
   useEffect(() => {
-    Axios.get(`http://localhost:4000/doctorRoute/doctorPage/${state}`)
+    Axios.get(`https://medibotbackend.onrender.com/doctorRoute/doctorPage/${state}`)
       .then((res) => setDoctor(res.data))
       .catch((err) => alert(err));
   }, []); 
@@ -53,7 +53,7 @@ const postJob = () => {
     jobs.push(formData);    
     setJob((prevJob) => [...prevJob, formData]);
     console.log(formData);
-    Axios.put(`http://localhost:4000/doctorRoute/jobs/${doctor._id}`,formData).
+    Axios.put(`https://medibotbackend.onrender.com/doctorRoute/jobs/${doctor._id}`,formData).
         then((res)=>{
             if (res.status === 200 && res.data.message === 'Update Successful') {
               alert("Update successful");

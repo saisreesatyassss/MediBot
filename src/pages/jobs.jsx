@@ -38,14 +38,14 @@ const Jobs = () => {
     const [allDoctors,setAllDoctors]=useState([]);
 
     useEffect(() => {
-        Axios.get('http://localhost:4000/doctorRoute/allDoctorIds')
+        Axios.get('https://medibotbackend.onrender.com/doctorRoute/allDoctorIds')
           .then((res) => {
             const doctorIds = res.data;
             setAllDoctors(doctorIds);
             console.log(doctorIds);
             const requests = doctorIds.map((doctor) => {
                 const idString = doctor._id.toString();
-              return Axios.get(`http://localhost:4000/doctorRoute/doctorPage/${idString}`)
+              return Axios.get(`https://medibotbackend.onrender.com/doctorRoute/doctorPage/${idString}`)
                 .then((res) => {
                     setCompany((prev)=>[...prev,res.data.company]);
                   return res.data.applicationsPosted;

@@ -19,7 +19,7 @@ export const DoctorPage = () => {
 
   useEffect(() => {
     console.log(state);
-    Axios.get(`http://localhost:4000/doctorRoute/doctorPage/${state}`)
+    Axios.get(`https://medibotbackend.onrender.com/doctorRoute/doctorPage/${state}`)
       .then((res) => setDoctor(res.data))
       .catch((err) => alert(err));
   }, []); 

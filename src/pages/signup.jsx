@@ -43,7 +43,7 @@ export default function Signup(){
       alert('Form contains errors. Please fill in all fields.');
     } else { 
       const data={username:username,password:password,email:email,phone:phone,company:company};
-      Axios.post("http://localhost:4000/doctorRoute/signup",data)
+      Axios.post("https://medibotbackend.onrender.com/doctorRoute/signup",data)
       .then((res)=>{ 
         if (res.status === 200 && res.data.message === 'SignUp successful') {
           alert("SignUp successful");

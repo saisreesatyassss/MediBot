@@ -19,7 +19,7 @@ const Doctorprofile = () => {
     rejected:2,
 });http:
   useEffect(() => {
-    Axios.get(`http://localhost:4000/doctorRoute/doctorPage/doctorProfile/${state}`)
+    Axios.get(`https://medibotbackend.onrender.com/doctorRoute/doctorPage/doctorProfile/${state}`)
     .then((res) => {
       setDoctor((prevDoctor) => {
         setArr({

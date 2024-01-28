@@ -34,7 +34,7 @@ const Profile = () => {
     });
 
     useEffect(() => { 
-      Axios.get(`http://localhost:4000/clientRoute/clientPage/profile/${state}`)
+      Axios.get(`https://medibotbackend.onrender.com/clientRoute/clientPage/profile/${state}`)
       .then((res) => {
         setClient((prevClient) => {
           setArr({
@@ -70,7 +70,7 @@ const Profile = () => {
 
     const saveChanges = () => {
         setIsEditing(false);
-        Axios.put(`http://localhost:4000/clientRoute/profile/${client._id}`,arr).
+        Axios.put(`https://medibotbackend.onrender.com/clientRoute/profile/${client._id}`,arr).
         then((res)=>{
             if (res.status === 200 && res.data.message === 'Update Successful') {
               setArr(

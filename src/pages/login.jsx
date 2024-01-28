@@ -22,7 +22,7 @@ export default function Form() {
 
   const loginClient=()=>{
         const data={username:username,password:password};
-        Axios.post("http://localhost:4000/clientRoute/login",data)
+        Axios.post("https://medibotbackend.onrender.com/clientRoute/login",data)
         .then((res)=>{
           if (res.status === 200 && res.data.message === 'Login successful') {
             alert("Login successful");
@@ -34,7 +34,7 @@ export default function Form() {
       }
   const loginDoctor=()=>{
         const data={username:username,password:password};
-        Axios.post("http://localhost:4000/doctorRoute/login",data) 
+        Axios.post("https://medibotbackend.onrender.com/doctorRoute/login",data) 
         .then((res)=>{
           console.log(res.status);
           console.log(res.data.message);

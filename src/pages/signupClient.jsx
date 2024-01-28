@@ -158,7 +158,7 @@ const removeSkill = (skillToRemove) => {
       alert('Please fill in all fields correctly before proceeding.');
     } else {
       const data={username:username,password:password,email:email,phone:phone,qualification:qualification,institutionName:institutionName,fieldName:fieldName,graduationYear:graduationYear,workStatus:workStatus,skills:skills,resume:resume,linkedinProfile:linkedinProfile};
-      Axios.post("http://localhost:4000/clientRoute/signup",data)
+      Axios.post("https://medibotbackend.onrender.com/clientRoute/signup",data)
       .then((res)=>{
         if (res.status === 200 && res.data.message === 'SignUp successful') {
           alert("SignUp successful");

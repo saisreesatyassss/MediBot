@@ -18,7 +18,7 @@ export const ClientPage = () => {
   const [client, setClient] = useState(null);
 
   useEffect(() => {
-    Axios.get(`http://localhost:4000/clientRoute/clientPage/${state}`)
+    Axios.get(`https://medibotbackend.onrender.com/clientRoute/clientPage/${state}`)
       .then((res) => setClient(res.data))
       .catch((err) => alert(err));
   }, []); 
